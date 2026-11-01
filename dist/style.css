@@ -31,3 +31,7 @@ h1 {
 .done-btn:hover {
     color: red;
 }
+
+#new-task:focus::placeholder {
+    color: transparent;
+}
