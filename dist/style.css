@@ -77,3 +77,14 @@ body.dark-mode .done-btn {
 body.dark-mode .done-btn:hover {
     color: red;
 }
+
+/* AI Assistance Citation */
+footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: gray;
+}
+
+footer a {
+    color: #2775c9;
+}
