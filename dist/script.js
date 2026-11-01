@@ -14,8 +14,6 @@ function domLoaded() {
         if (event.key === "Enter") {
             addBtnClick();
         }
-    // Count the tasks when the webpage loads
-    updateTaskCount();
     });
 
     // Set up remove buttons for existing tasks
@@ -36,6 +34,9 @@ function domLoaded() {
             themeBtn.textContent = "🌙 Dark Mode";
         }
     });
+    
+    // Count the tasks when the webpage loads
+    updateTaskCount();
 }
 
 // Get the new task from the textbox
