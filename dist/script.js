@@ -14,6 +14,8 @@ function domLoaded() {
         if (event.key === "Enter") {
             addBtnClick();
         }
+    // Count the tasks when the webpage loads
+    updateTaskCount();
     });
 
     // Set up remove buttons for existing tasks
@@ -73,4 +75,19 @@ function addTask(task) {
 function removeTask(event) {
     const listItem = event.target.parentNode;
     listItem.parentNode.removeChild(listItem);
+}
+
+// Update the number of remaining tasks
+function updateTaskCount() {
+    const tasks = document.querySelectorAll("#task-list li");
+    const count = tasks.length;
+
+    const taskCounter = document.getElementById("task-count");
+
+    if (count === 1) {
+        taskCounter.textContent = count + " Task Remaining";
+    }
+    else {
+        taskCounter.textContent = count + " Tasks Remaining";
+    }
 }
