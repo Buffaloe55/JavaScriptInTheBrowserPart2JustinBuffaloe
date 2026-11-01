@@ -33,6 +33,9 @@ function addBtnClick() {
     if (newTask.length > 0) {
         addTask(newTask);
     }
+    else {
+        alert("You must type a task before adding!");
+    }
 
     // Clear the textbox and return focus
     taskInput.value = "";
