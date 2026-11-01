@@ -79,6 +79,9 @@ function addTask(task) {
 function removeTask(event) {
     const listItem = event.target.parentNode;
     listItem.parentNode.removeChild(listItem);
+    
+    // Update the counter after removing a task
+    updateTaskCount();
 }
 
 // Update the number of remaining tasks
