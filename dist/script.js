@@ -34,7 +34,7 @@ function domLoaded() {
             themeBtn.textContent = "🌙 Dark Mode";
         }
     });
-    
+
     // Count the tasks when the webpage loads
     updateTaskCount();
 }
@@ -70,6 +70,9 @@ function addTask(task) {
     // Add a click handler to the newest remove button
     const doneButtons = document.querySelectorAll(".done-btn");
     doneButtons[doneButtons.length - 1].addEventListener("click", removeTask);
+
+    // Update the counter after adding a task
+    updateTaskCount();
 }
 
 // Remove a task when its X button is clicked
