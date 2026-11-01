@@ -35,3 +35,45 @@ h1 {
 #new-task:focus::placeholder {
     color: transparent;
 }
+
+/* Dark Mode Button */
+#theme-btn {
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Smooth transition between themes */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Dark Mode Textbox */
+body.dark-mode #new-task {
+    background-color: #333;
+    color: white;
+    border: 1px solid #777;
+}
+
+/* Dark Mode Buttons */
+body.dark-mode #theme-btn {
+    background-color: #444;
+    color: white;
+    border: 1px solid #777;
+}
+
+/* Dark Mode Delete Buttons */
+body.dark-mode .done-btn {
+    color: lightgray;
+}
+
+body.dark-mode .done-btn:hover {
+    color: red;
+}

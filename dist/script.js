@@ -22,6 +22,18 @@ function domLoaded() {
     for (let button of doneButtons) {
         button.addEventListener("click", removeTask);
     }
+    const themeBtn = document.getElementById("theme-btn");
+
+    themeBtn.addEventListener("click", function() {
+        const isDark = document.body.classList.toggle("dark-mode");
+
+        if (isDark) {
+            themeBtn.textContent = "☀️ Light Mode";
+        }
+        else {
+            themeBtn.textContent = "🌙 Dark Mode";
+        }
+    });
 }
 
 // Get the new task from the textbox
