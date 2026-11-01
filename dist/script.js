@@ -1,0 +1,61 @@
+// Wait for the webpage to load
+document.addEventListener("DOMContentLoaded", domLoaded);
+
+// Set up event listeners
+function domLoaded() {
+    const addBtn = document.getElementById("add-btn");
+    const taskInput = document.getElementById("new-task");
+
+    // Add a task when Add is clicked
+    addBtn.addEventListener("click", addBtnClick);
+
+    // Add a task when Enter is pressed
+    taskInput.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            addBtnClick();
+        }
+    });
+
+    // Set up remove buttons for existing tasks
+    const doneButtons = document.querySelectorAll(".done-btn");
+
+    for (let button of doneButtons) {
+        button.addEventListener("click", removeTask);
+    }
+}
+
+// Get the new task from the textbox
+function addBtnClick() {
+    const taskInput = document.getElementById("new-task");
+    const newTask = taskInput.value.trim();
+
+    // Prevent empty tasks
+    if (newTask.length > 0) {
+        addTask(newTask);
+    }
+
+    // Clear the textbox and return focus
+    taskInput.value = "";
+    taskInput.focus();
+}
+
+// Create and add a new task
+function addTask(task) {
+    const newItem = document.createElement("li");
+
+    newItem.innerHTML =
+        `<span class="task-text">${task}</span><button class="done-btn">&#10006;</button>`;
+
+    const taskList = document.querySelector("ol");
+    taskList.appendChild(newItem);
+
+    // Add a click handler to the newest remove button
+    const doneButtons = document.querySelectorAll(".done-btn");
+    doneButtons[doneButtons.length - 1].addEventListener("click", removeTask);
+}
+
+// Remove a task when its X button is clicked
+function removeTask(event) {
+    const listItem = event.target.parentNode;
+    listItem.parentNode.removeChild(listItem);
+}
